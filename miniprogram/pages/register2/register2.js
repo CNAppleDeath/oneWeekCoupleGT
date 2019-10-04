@@ -30,7 +30,7 @@ Page({  /**
         name: '情商',
         checked: false
       }
-    ], match: {}
+    ], match: {}, cp: ''
   },  /**
    * 生命周期函数--监听页面加载
    */
@@ -154,7 +154,7 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match
+          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match, cp: this.data.cp
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
@@ -164,8 +164,8 @@ Page({  /**
             name: 'newUserUpdateDatabase',
             data: {},
             success: res => {
-              console.log('[云函数] [login] user openid: reg2', res.result.openid)
-              //app.globalData.openid = res.result.openid
+              // console.log('[云函数] [login] user openid: reg2', res.result.openid)
+              // app.globalData.openid = res.result.openid
             },
             fail: err => {
               console.error('[云函数] [login] 调用失败 reg2', err)
@@ -176,7 +176,7 @@ Page({  /**
           })
 
           wx.redirectTo({
-            url: '../index/index'
+            url: '../user_info_display/user_info_display'
           })
         }
       })

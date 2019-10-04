@@ -16,7 +16,9 @@
     "pages/openapi/callback/callback",
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room"
+    "pages/im/room/room",
+    "pages/user_info_display/user_info_display",
+    "pages/cp_info_display/cp_info"
   ],
   "window": {
     "backgroundColor": "#1ac6ff",
